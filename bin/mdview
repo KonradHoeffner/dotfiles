@@ -1,0 +1,4 @@
+#!/bin/bash
+# view markdown files in firefox (requires the markdown tool)
+markdown $1  > /tmp/tmp.html
+firefox /tmp/tmp.html

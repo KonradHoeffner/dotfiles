@@ -1,0 +1,52 @@
+#!/bin/bash
+# shouldnt be used in a loop, else the path may become too long
+
+if [[ $(/usr/bin/id -u) -ne 0 ]]; then
+    echo "Not running as root"
+    exit
+fi
+
+case "$1" in
+  6)
+    echo "Setting Java version 6"
+    export PATH=/usr/lib/jvm/jdk1.6.0_32/bin:$PATH
+    export JAVA_HOME=/usr/lib/jvm/jdk1.6.0_32
+    sudo rm /usr/bin/java
+    sudo rm /usr/bin/javac
+    sudo rm /usr/bin/javadoc
+    sudo rm /usr/bin/javah
+    sudo rm /usr/bin/javap
+    sudo rm /usr/bin/javaws
+    sudo ln -s /usr/lib/jvm/jdk1.6.0_32/bin/java /usr/bin/java
+    sudo ln -s /usr/lib/jvm/jdk1.6.0_32/bin/javac /usr/bin/javac
+    sudo ln -s /usr/lib/jvm/jdk1.6.0_32/bin/javadoc /usr/bin/javadoc
+    sudo ln -s /usr/lib/jvm/jdk1.6.0_32/bin/javah /usr/bin/javah
+    sudo ln -s /usr/lib/jvm/jdk1.6.0_32/bin/javap /usr/bin/javap
+    sudo ln -s /usr/lib/jvm/jdk1.6.0_32/bin/javaws /usr/bin/javaws
+    javac -version    
+    java -version
+    ;;
+  7)
+    echo "Setting Java version 7"
+    export PATH=/usr/lib/jvm/java-7-openjdk/bin:$PATH
+    export JAVA_HOME=/usr/lib/jvm/java-7-openjdk/
+    sudo rm /usr/bin/java
+    sudo rm /usr/bin/javac
+    sudo rm /usr/bin/javadoc
+    sudo rm /usr/bin/javah
+    sudo rm /usr/bin/javap
+    sudo rm /usr/bin/javaws
+    sudo ln -s /usr/lib/jvm/java-7-openjdk/bin/java /usr/bin/java
+    sudo ln -s /usr/lib/jvm/java-7-openjdk/bin/javac /usr/bin/javac
+    sudo ln -s /usr/lib/jvm/java-7-openjdk/bin/javadoc /usr/bin/javadoc
+    sudo ln -s /usr/lib/jvm/java-7-openjdk/bin/javah /usr/bin/javah
+    sudo ln -s /usr/lib/jvm/java-7-openjdk/bin/javap /usr/bin/javap
+    sudo ln -s /usr/lib/jvm/java-7-openjdk/bin/javaws /usr/bin/javaws
+    javac -version
+    java -version
+    ;;
+  *)
+    echo "Usage: $0 {6|7}"
+    
+esac
+exit 0
