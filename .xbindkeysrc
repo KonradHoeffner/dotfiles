@@ -10,7 +10,7 @@
     m:0xc + c:56
     Control+Alt + b
 
-"eclipse"
+"/opt/eclipse/eclipse"
     m:0xc + c:44
     Control+Alt + j
 
