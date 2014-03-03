@@ -16,8 +16,5 @@ declare -a uris=("http://downloads.dbpedia.org/${VERSION}/dbpedia_${VERSION}.owl
 
 for uri in ${uris[@]}
 do
- echo "loading $uri at `date`..."
- wget $uri
- echo "finished loading $uri at `date`"
+wget $uri
 done
-echo "done loading everything"
