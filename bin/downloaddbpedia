@@ -1,0 +1,37 @@
+#!/bin/bash
+DEFAULT_VERSION='3.9'
+
+if [ -z $1 ]; then
+VERSION=$DEFAULT_VERSION;
+echo "No version number specified (empty parameter 1), using $DEFAULT_VERSION";
+else
+VERSION=$1
+fi
+
+declare -a uris=("http://downloads.dbpedia.org/${VERSION}/dbpedia_${VERSION}.owl.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/labels_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/short_abstracts_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/images_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/instance_types_en.nt.bz2"
+"http://downloads.dbpedia.org/en/${VERSION}/long_abstracts_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/geo_coordinates_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/raw_infobox_properties_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/raw_infobox_property_definitions_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/homepages_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/article_categories_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/category_labels_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/skos_categories_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/external_links_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/wikipedia_links_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/redirects_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/disambiguations_en.nt.bz2"
+"http://downloads.dbpedia.org/${VERSION}/en/iri_same_as_uri_en.nt.bz2"
+)
+
+for uri in ${uris[@]}
+do
+ echo "loading $uri at `date`..."
+ wget $uri
+ echo "finished loading $uri at `date`"
+done
+echo "done loading everything"
