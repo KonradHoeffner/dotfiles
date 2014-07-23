@@ -68,3 +68,5 @@ export GREP_OPTIONS='--color=auto'
 export GREP_COLOR=7
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+SVN_EDITOR=vim
