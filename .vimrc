@@ -18,10 +18,8 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set relativenumber
+" set relativenumber
 set undofile
-nnoremap / /\v
-vnoremap / /\v
 set ignorecase
 set smartcase
 set gdefault
@@ -40,8 +38,9 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-
-
+" latex-vim no three letter expansion
+let g:Tex_SectionMaps = "0"
+let g:Tex_ViewRule_pdf = "evince 2>/dev/null"
 syntax on
 set mouse=a
 set background=dark

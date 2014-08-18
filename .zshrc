@@ -56,7 +56,7 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 fi
 # End of key bindings for special keys (from https://wiki.archlinux.org/index.php/Zsh#Key_bindings)
 
-PATH=/home/konrad/bin:/usr/local/texlive/2013/bin/x86_64-linux/:$PATH
+PATH=/home/konrad/bin:/usr/local/texlive/2014/bin/x86_64-linux/:$PATH
 export PATH
 alias ls='ls --color=auto'
 alias f=find

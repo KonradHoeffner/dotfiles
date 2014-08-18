@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PATH=/home/konrad/bin:/usr/local/texlive/2013/bin/x86_64-linux/:$PATH
+PATH=/home/konrad/bin:/usr/local/texlive/2014/bin/x86_64-linux/:$PATH
 export PATH
 
 alias ls='ls --color=auto'
