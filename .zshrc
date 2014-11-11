@@ -70,3 +70,9 @@ export GREP_COLOR=7
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 SVN_EDITOR=vim
+
+case $TERM in
+        xterm*)
+                    precmd () {print -Pn "\e]0;%~\a"}
+                            ;;
+                    esac
