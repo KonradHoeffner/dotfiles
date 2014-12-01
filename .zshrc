@@ -1,3 +1,10 @@
+cd $(<>/dev/shm/$USER-pwd)
+
+__cd(){
+    \cd "$@"
+    pwd >/dev/shm/$USER-pwd
+}
+alias cd=__cd
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored
@@ -64,15 +71,12 @@ alias g=grep
 PS1='%c$ '
 #RPROMPT='%~'
 #PS1='[\u@\h \W]\$ '
-export GREP_OPTIONS='--color=auto'
+#export GREP_OPTIONS='--color=auto'
+unset GREP_OPTIONS
+alias grep="/usr/bin/grep --color=auto"
 export GREP_COLOR=7
-
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 SVN_EDITOR=vim
-
-case $TERM in
-        xterm*)
-                    precmd () {print -Pn "\e]0;%~\a"}
-                            ;;
-                    esac
+# pwd as title
+precmd () { print -Pn "\e]2;%~\a" } 

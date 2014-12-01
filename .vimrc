@@ -52,6 +52,9 @@ noremap l k
 noremap k j
 noremap j h
 
+" disable folding
+let g:Tex_AutoFolding = 0
+
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
