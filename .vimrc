@@ -61,3 +61,13 @@ let g:tex_flavor = "latex"
 let g:Tex_CompileRule_pdf = 'latexmk -interaction=nonstopmode -pdf $*'
 let g:Tex_DefaultTargetFormat = 'pdf'
 set iskeyword+=:
+
+set paste
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+" already set at the top but doesn't seem to work, maybe works at this position?
+set ruler
+
+" show tsv in columns
+autocmd Filetype tsv setlocal ts=20 sts=20 sw=20 number noexpandtab
