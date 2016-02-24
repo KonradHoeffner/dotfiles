@@ -1,8 +1,8 @@
-cd $(<>/dev/shm/$USER-pwd)
+\cd "$(<>/dev/shm/$USER-pwd)"
 
 __cd(){
+    pwd | sed "s| |\\\ |g" > /dev/shm/$USER-pwd
     \cd "$@"
-    pwd >/dev/shm/$USER-pwd
 }
 alias cd=__cd
 # The following lines were added by compinstall
@@ -63,8 +63,9 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 fi
 # End of key bindings for special keys (from https://wiki.archlinux.org/index.php/Zsh#Key_bindings)
 
-PATH=/home/konrad/bin:/usr/local/texlive/2014/bin/x86_64-linux/:$PATH
+PATH=/home/konrad/bin:/usr/local/texlive/2014/bin/x86_64-linux/:/opt/nomad.3.7.1/bin:$PATH
 export PATH
+export EDITOR=vim
 alias ls='ls --color=auto'
 alias f=find
 alias g=grep
