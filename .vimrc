@@ -1,9 +1,6 @@
 set nocompatible
 set modelines=0
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+set noexpandtab
 set encoding=utf-8
 set scrolloff=3
 set autoindent
@@ -30,14 +27,10 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
 " latex-vim no three letter expansion
 let g:Tex_SectionMaps = "0"
 let g:Tex_ViewRule_pdf = "evince 2>/dev/null"
@@ -70,4 +63,5 @@ set showmode
 set ruler
 
 " show tsv in columns
-autocmd Filetype tsv setlocal ts=20 sts=20 sw=20 number noexpandtab
+autocmd BufEnter *.tsv setlocal ts=20 sts=20 sw=20
+"  number noexpandtab
