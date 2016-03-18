@@ -1,8 +1,8 @@
 \cd "$(<>/dev/shm/$USER-pwd)"
 
 __cd(){
-    pwd | sed "s| |\\\ |g" > /dev/shm/$USER-pwd
     \cd "$@"
+    pwd | sed "s| |\\\ |g" > /dev/shm/$USER-pwd
 }
 alias cd=__cd
 # The following lines were added by compinstall
