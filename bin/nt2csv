@@ -25,5 +25,9 @@ sed 's/>\s*</,/g' |
 # 4. Split between object and predicate in the case of datatype properties using split strings '> "' and '"^^<' (space symbolizes any amount of white space) but keep the quotation mark
 sed 's|>\s*"|,"|' |
 sed 's|"^^<|",|' |
-# 5. Somehow we end up with commas at the end, remove them
+# 5 Split blank node subjects
+sed -r "s|(_:[^ ]*)\s+<|\1,|" |
+# 6. Split blank node objects (blank nodes can only be subjects or objects, not properties, according to the RDF spec)
+sed "s|>\s*_:|,_:|" |
+# 7. Somehow we may end up with commas at the end, remove them
 sed 's|,$||'
