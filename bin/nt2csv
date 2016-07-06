@@ -1,2 +1,29 @@
 #!/bin/bash
-sed 's#[<">]##g' | sed "s|\.$||" | sed "s|[ @]|,|g" | sed "s|^^||g" | sed "s|,$||"
+# converts ntriples (nt)to comma separated values (csv)
+#
+# Usage: nt2csv < input.nt > output.csv
+#
+# We choose ntriples as input format because it is well structured and easy to process using unix command line tools
+# each line of an nt file represents a single triple in one of four ways (the dots at the end included):
+# 1. <subject> <predicate> <object>.
+# 2. <subject> <predicate> "label".
+# 3. <subject> <predicate> "label"@languagetag.
+# 4. <subject> <predicate> "label"^^datatype.
+# There can also be blank nodes, such as _:alice
+# Full ntriples spec at https://www.w3.org/TR/n-triples/
+# The output is a csv file with one row per triple in the form:
+# subject,predicate,object(, language tag or data type)
+# This script is optimized for fast development and readability, if you need more speed feel free to optimize (e.g. merge multiple sed calls into one).
+# Possible problem: If literals contain those split strings, thus for future version don't replace inside them
+
+# 1. Remove leading and trailing parts
+sed 's/^<\|>\s*\.$//g' |
+# 2 Remove trailing dot in case of datatype property
+sed 's|\s*\.$||' |
+# 3. Split between subject and predicate and between predicate and object in the case of no label using  '> <'
+sed 's/>\s*</,/g' |
+# 4. Split between object and predicate in the case of datatype properties using split strings '> "' and '"^^<' (space symbolizes any amount of white space) but keep the quotation mark
+sed 's|>\s*"|,"|' |
+sed 's|"^^<|",|' |
+# 5. Somehow we end up with commas at the end, remove them
+sed 's|,$||'
