@@ -66,9 +66,12 @@ fi
 PATH=/home/konrad/bin:/usr/local/texlive/2014/bin/x86_64-linux/:/opt/nomad.3.7.1/bin:$PATH
 export PATH
 export EDITOR=vim
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
 alias ls='ls --color=auto'
 alias f=find
 alias g=grep
+alias bibtex="bibtex -terse"
+alias pdflatex="pdflatex -shell-escape --interaction=batchmode -halt-on-error"
 PS1='%c$ '
 #RPROMPT='%~'
 #PS1='[\u@\h \W]\$ '
