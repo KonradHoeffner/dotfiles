@@ -8,7 +8,7 @@ alias cd=__cd
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/konrad/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -63,7 +63,7 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 fi
 # End of key bindings for special keys (from https://wiki.archlinux.org/index.php/Zsh#Key_bindings)
 
-PATH=/home/konrad/bin:/usr/local/texlive/2014/bin/x86_64-linux/:/opt/nomad.3.7.1/bin:$PATH
+PATH=~/bin:$PATH
 export PATH
 export EDITOR=vim
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
@@ -77,9 +77,6 @@ alias pdflatex=_pdflatex
 #alias pdflatex="texfot pdflatex -halt-on-error | grep -v hbox"
 alias latexmk="latexmk -pdf -halt-on-error"
 PS1='%c$ '
-#RPROMPT='%~'
-#PS1='[\u@\h \W]\$ '
-#export GREP_OPTIONS='--color=auto'
 unset GREP_OPTIONS
 alias grep="/usr/bin/grep --color=auto"
 export GREP_COLOR=7
