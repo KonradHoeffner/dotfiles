@@ -1,30 +1,21 @@
 "thunderbird"
-    m:0xc + c:58
     Control+Alt + m
 
 "gnome-terminal"
-    m:0xc + c:28
     Control+Alt + t
 
 "firefox"
     m:0xc + c:56
     Control+Alt + b
 
-"/opt/eclipse/eclipse"
-    m:0xc + c:44
+"/home/konrad/bin/eclipse"
     Control+Alt + j
 
-"/opt/eclipse-maven/eclipse"
-    m:0xc + c:33
-    Control+Alt + p
+"idea"
+    Control+Alt + i
 
 "skype"
-    m:0xc + c:39
     Control+Alt + s
-
-#"/home/konrad/opt/eclipse-vaadin/eclipse"
-#   m:0xc + c:55
-#   Control+Alt + v
 
 #keystate_numlock = enable
 #keystate_capslock = enable

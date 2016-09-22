@@ -71,7 +71,11 @@ alias ls='ls --color=auto'
 alias f=find
 alias g=grep
 alias bibtex="bibtex -terse"
-alias pdflatex="pdflatex -shell-escape --interaction=batchmode -halt-on-error"
+#alias pdflatex="pdflatex -shell-escape --interaction=batchmode -halt-on-error"
+_pdflatex() { texfot pdflatex -halt-on-error $@}
+alias pdflatex=_pdflatex
+#alias pdflatex="texfot pdflatex -halt-on-error | grep -v hbox"
+alias latexmk="latexmk -pdf -halt-on-error"
 PS1='%c$ '
 #RPROMPT='%~'
 #PS1='[\u@\h \W]\$ '
