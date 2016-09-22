@@ -63,7 +63,7 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 fi
 # End of key bindings for special keys (from https://wiki.archlinux.org/index.php/Zsh#Key_bindings)
 
-PATH=~/bin:$PATH
+PATH=~/bin:$PATH:/usr/local/texlive/2014/bin/x86_64-linux/
 export PATH
 export EDITOR=vim
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
@@ -72,9 +72,8 @@ alias f=find
 alias g=grep
 alias bibtex="bibtex -terse"
 #alias pdflatex="pdflatex -shell-escape --interaction=batchmode -halt-on-error"
-_pdflatex() { texfot pdflatex -halt-on-error $@}
+_pdflatex() { texfot pdflatex -halt-on-error $@ | grep -v hbox | grep -v titlesec | grep -v "scrreprt Warning"}
 alias pdflatex=_pdflatex
-#alias pdflatex="texfot pdflatex -halt-on-error | grep -v hbox"
 alias latexmk="latexmk -pdf -halt-on-error"
 PS1='%c$ '
 unset GREP_OPTIONS
