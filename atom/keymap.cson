@@ -1,0 +1,37 @@
+# Your keymap
+#
+# Atom keymaps work similarly to style sheets. Just as style sheets use
+# selectors to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts. Unlike style sheets however,
+# each selector can only be declared once.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+'atom-text-editor': {'ctrl-i': 'editor:auto-indent'}
+
+# Bind toggle left panel to CTRL-ß on German keyboard because CTRL-\ does not work there. ***********
+# For some reason, we have to input CTRL-[ to achieve CTRL-ß.
+# Unset treeview fold in keybind.
+'.tree-view':
+ 'ctrl-[': 'unset!'
+
+'atom-workspace atom-text-editor:not([mini])':
+ 'ctrl-[': 'unset!'
+
+'atom-workspace atom-text-editor:not([mini])':
+	'ctrl-[': 'tree-view:toggle'
+# ***************************************************************************************************
+
+#
+# You can find more information about keymaps in these guides:
+# * http://flight-manual.atom.io/using-atom/sections/basic-customization/#_customizing_keybindings
+# * http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/
+#
+# Keybinding Resolver: `Ctrl+.`. Debugging guide:
+# * http://flight-manual.atom.io/hacking-atom/sections/debugging/#check-the-keybindings
+#
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
