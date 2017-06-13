@@ -1,4 +1,5 @@
 set nocompatible
+set history=1000
 set modelines=0
 set noexpandtab
 set encoding=utf-8
