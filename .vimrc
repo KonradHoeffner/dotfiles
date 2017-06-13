@@ -66,3 +66,7 @@ set ruler
 " show tsv in columns
 autocmd BufEnter *.tsv setlocal ts=20 sts=20 sw=20
 "  number noexpandtab
+
+" detect .md as markdown syntax in vim
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+let g:vim_markdown_folding_disabled = 1
