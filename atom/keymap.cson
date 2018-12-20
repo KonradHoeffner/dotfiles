@@ -2,15 +2,8 @@
   'ctrl-i': 'editor:auto-indent'
 	'ctrl-j': 'atom-beautify:atom-beautify-editor'
 
-# Bind toggle left panel to CTRL-ß on German keyboard because CTRL-\ does not work there. ***********
-# For some reason, we have to input CTRL-[ to achieve CTRL-ß.
-# Unset treeview fold in keybind.
-'.tree-view':
- 'ctrl-[': 'unset!'
-
 'atom-workspace atom-text-editor:not([mini])':
-  'ctrl-[': 'unset!'
-  'ctrl-[': 'tree-view:toggle'
+  'ctrl-ß': 'tree-view:toggle'
 	'ESC': 'linter:togglePanel'
 
 # ***************************************************************************************************
