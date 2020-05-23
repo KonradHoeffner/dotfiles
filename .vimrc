@@ -2,6 +2,7 @@ set nocompatible
 set history=1000
 set modelines=0
 set noexpandtab
+set tabstop=4
 set encoding=utf-8
 set scrolloff=3
 set autoindent
@@ -69,6 +70,7 @@ autocmd BufEnter *.tsv setlocal ts=20 sts=20 sw=20
 
 " detect .md as markdown syntax in vim
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+autocmd Filetype cpp setlocal tabstop=2
 let g:vim_markdown_folding_disabled = 1
 
 " enable CTRL + Arrow keys outside of Gnome
