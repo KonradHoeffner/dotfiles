@@ -70,3 +70,9 @@ autocmd BufEnter *.tsv setlocal ts=20 sts=20 sw=20
 " detect .md as markdown syntax in vim
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 let g:vim_markdown_folding_disabled = 1
+
+" enable CTRL + Arrow keys outside of Gnome
+execute "set <xUp>=\e[1;*A"
+execute "set <xDown>=\e[1;*B"
+execute "set <xRight>=\e[1;*C"
+execute "set <xLeft>=\e[1;*D"
