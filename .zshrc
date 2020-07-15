@@ -17,7 +17,7 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory autocd
+setopt inc_append_history autocd
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # Key bindings for special keys (from https://wiki.archlinux.org/index.php/Zsh#Key_bindings)
