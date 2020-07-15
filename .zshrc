@@ -16,7 +16,7 @@ compinit
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
-SAVEHIST=1000
+SAVEHIST=100000
 setopt inc_append_history autocd
 bindkey -e
 # End of lines configured by zsh-newuser-install
