@@ -67,6 +67,7 @@ PATH=~/bin:$PATH:/usr/local/texlive/2014/bin/x86_64-linux/
 export PATH
 export EDITOR=vim
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
+export PYTHONPYCACHEPREFIX=~/.pycache
 alias ls='ls --color=auto'
 alias f=find
 alias g=grep
