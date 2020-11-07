@@ -12,7 +12,8 @@ set hidden
 set wildmenu
 set wildmode=list:longest
 set visualbell
-set cursorline
+" cursorline may cause slowdowns, see https://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html
+"set cursorline
 set ttyfast
 set ruler
 set backspace=indent,eol,start
