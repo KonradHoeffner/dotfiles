@@ -76,6 +76,9 @@ alias bibtex="bibtex -terse"
 _pdflatex() { texfot pdflatex -halt-on-error $@ | grep -v hbox | grep -v titlesec | grep -v "scrreprt Warning"}
 alias pdflatex=_pdflatex
 alias latexmk="latexmk -pdf -halt-on-error"
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
 PS1='%c$ '
 unset GREP_OPTIONS
 alias grep="/usr/bin/grep --color=auto"
@@ -84,4 +87,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 SVN_EDITOR=vim
 # pwd as title
-precmd () { print -Pn "\e]2;%~\a" } 
+precmd () { print -Pn "\e]2;%~\a" }
