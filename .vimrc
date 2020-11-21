@@ -74,7 +74,7 @@ autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 autocmd Filetype cpp setlocal tabstop=2
 let g:vim_markdown_folding_disabled = 1
 
-" enable CTRL + Arrow keys outside of Gnome
+" enable CTRL + Arrow keys outside of Gnome, see https://vi.stackexchange.com/questions/11668/control-arrow-to-skip-over-text
 execute "set <xUp>=\e[1;*A"
 execute "set <xDown>=\e[1;*B"
 execute "set <xRight>=\e[1;*C"
