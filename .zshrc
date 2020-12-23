@@ -63,16 +63,16 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 fi
 # End of key bindings for special keys (from https://wiki.archlinux.org/index.php/Zsh#Key_bindings)
 
-PATH=~/bin:$PATH:/usr/local/texlive/2014/bin/x86_64-linux/
+PATH="$PATH:.:~/bin"
 export PATH
 export EDITOR=vim
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
 export PYTHONPYCACHEPREFIX=~/.pycache
 alias ls='ls --color=auto'
 alias f=find
 alias g=grep
+alias firefox=firefox-developer-edition
 alias bibtex="bibtex -terse"
-#alias pdflatex="pdflatex -shell-escape --interaction=batchmode -halt-on-error"
+unalias pdflatex &> /dev/null # silence error message when not aliased
 _pdflatex() { texfot pdflatex -halt-on-error $@ | grep -v hbox | grep -v titlesec | grep -v "scrreprt Warning"}
 alias pdflatex=_pdflatex
 alias latexmk="latexmk -pdf -halt-on-error"
