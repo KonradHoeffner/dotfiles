@@ -84,7 +84,8 @@ unset GREP_OPTIONS
 alias grep="/usr/bin/grep --color=auto"
 export GREP_COLOR=7
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+export LANG=en_US.UTF-8
+export HISTTIMEFORMAT="%d/%m/%y %T "
 SVN_EDITOR=vim
 # pwd as title
 precmd () { print -Pn "\e]2;%~\a" }
