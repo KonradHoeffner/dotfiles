@@ -73,6 +73,10 @@ autocmd BufEnter *.tsv setlocal ts=20 sts=20 sw=20
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 autocmd Filetype cpp setlocal tabstop=2
 let g:vim_markdown_folding_disabled = 1
+" prevent evince error messages from showing up in vim
+let g:Tex_ViewRule_pdf='evince 2>/dev/null'
+" filetype detection without extension
+filetype detect
 
 " enable CTRL + Arrow keys outside of Gnome, see https://vi.stackexchange.com/questions/11668/control-arrow-to-skip-over-text
 execute "set <xUp>=\e[1;*A"
