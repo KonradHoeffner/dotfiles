@@ -79,6 +79,7 @@ alias latexmk="latexmk -pdf -halt-on-error"
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
+alias multipull="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} sh -c 'echo {} && git -C {} pull'"
 PS1='%c$ '
 unset GREP_OPTIONS
 alias grep="/usr/bin/grep --color=auto"
