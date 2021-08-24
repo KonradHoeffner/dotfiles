@@ -1,0 +1,41 @@
+[alias]
+	st = status
+	diff-image = "!f() { cd -- \"${GIT_PREFIX:-.}\"; GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
+	dt = difftool
+	co = checkout
+[user]
+	name = Konrad Höffner
+	email = konrad.hoeffner@uni-leipzig.de
+[core]
+	attributesfile = ~/.gitattributes
+	autocrlf = input
+[diff "image"]
+	command = /tmp/bla/git-diff-image/git_diff_image
+[diff]
+	tool = nvimdiff
+[diff "pdf"]
+	textconv = pdfinfo
+[filesystem "N/A|13.0.1|/dev/sda2"]
+	timestampResolution = 8000 nanoseconds
+	minRacyThreshold = 5203 microseconds
+[difftool]
+	prompt = false
+[pull]
+	rebase = true
+[merge]
+	tool = nvimdiff
+[init]
+	defaultBranch = master
+[color]
+	ui = always
+	branch = always
+	diff = always
+	interactive = always
+	status = always
+	grep = always
+	pager = true
+	decorate = always
+	showbranch = always
+	advice = true
+[color "remote"]
+	error = red bold
