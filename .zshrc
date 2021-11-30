@@ -67,6 +67,7 @@ PATH="$PATH:.:~/bin"
 export PATH
 export EDITOR=vim
 export PYTHONPYCACHEPREFIX=~/.pycache
+export DOCKER_BUILDKIT=1
 alias ls='ls --color=auto'
 alias f=find
 alias g=grep
