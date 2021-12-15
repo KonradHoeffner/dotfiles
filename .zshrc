@@ -63,7 +63,9 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 fi
 # End of key bindings for special keys (from https://wiki.archlinux.org/index.php/Zsh#Key_bindings)
 
-PATH="$PATH:.:~/bin"
+PATH="$PATH:.:/home/konrad/bin:/home/konrad/.local/bin"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+PATH="$PATH:$GEM_HOME/bin"
 export PATH
 export EDITOR=vim
 export PYTHONPYCACHEPREFIX=~/.pycache
