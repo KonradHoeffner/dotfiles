@@ -1,8 +1,5 @@
 {
     "editor.fontFamily": "'Inconsolata-g','Inconsolata-dz','Inconsolata'",
-    "files.exclude": {
-        "**/node_modules": true
-    },
     "workbench.colorTheme": "Default High Contrast",
     "prettier.requireConfig": true,
     "prettier.configPath": ".prettierrc",
@@ -10,6 +7,10 @@
     "editor.fontLigatures": true,
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.exclude": {
+        "**/bower_components": true,
+        "**/node_modules": true
     },
     "typescript.tsserver.experimental.enableProjectDiagnostics": true
 }
