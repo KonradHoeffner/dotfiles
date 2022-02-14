@@ -82,7 +82,7 @@ alias latexmk="latexmk -pdf -halt-on-error"
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
-alias multipull="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | parallel -j64 'echo -n {}... && git -C {} pull'"
+alias multipull="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | parallel -j64 'echo -n {}... && git -C {} pull' | grep -v 'up to date'"
 alias multipull-serial="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} sh -c 'echo -n {}... && git -C {} pull'"
 alias multipush="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} sh -c 'echo -n {}... && git -C {} push'"
 PS1='%c$ '
