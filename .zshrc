@@ -76,14 +76,22 @@ alias g=grep
 alias firefox=firefox-developer-edition
 alias bibtex="bibtex -terse"
 unalias pdflatex &> /dev/null # silence error message when not aliased
-_pdflatex() { texfot pdflatex -halt-on-error $@ | grep -v hbox | grep -v titlesec | grep -v "scrreprt Warning"}
-alias pdflatex=_pdflatex
-alias latexmk="latexmk -pdf -halt-on-error"
+unalias latexmk &> /dev/null # silence error message when not aliased
+alias pdflatex='texfot pdflatex -interaction=nonstopmode -halt-on-error -file-line-error'
+alias latexmk="latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error"
+# system tool replacements
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
   alias vimdiff='nvim -d'
 fi
-alias multipull="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | parallel -j64 'echo -n {}... && git -C {} pull' | grep -v 'up to date'"
+if type exa > /dev/null 2>&1; then
+  alias ls='exa'
+fi
+if type bat > /dev/null 2>&1; then
+  alias cat='bat'
+fi
+# workaround for GNOME keyring parallel bug, see https://gitlab.gnome.org/GNOME/gnome-keyring/-/issues/102
+alias multipull="git -C /home/konrad/projekte/hito/ontology pull origin master && find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | parallel -j64 'echo -n {}... && git -C {} pull | grep -v \"up to date\"'"
 alias multipull-serial="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} sh -c 'echo -n {}... && git -C {} pull'"
 alias multipush="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} sh -c 'echo -n {}... && git -C {} push'"
 PS1='%c$ '
