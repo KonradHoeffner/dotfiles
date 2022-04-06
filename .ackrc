@@ -481,3 +481,7 @@
 --ignore-directory=is:coverage
 --ignore-directory=is:doc
 --ignore-directory=is:_site
+--ignore-directory=is:tmp
+--ignore-directory=is:temp
+--ignore-file=is:all.ttl
+--ignore-file=is:all.nt
