@@ -104,3 +104,15 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 SVN_EDITOR=vim
 # pwd as title
 precmd () { print -Pn "\e]2;%~\a" }
+# branch on the right if it isn't main or master
+my_precmd() {
+  vcs_info
+  local br=$vcs_info_msg_0_
+  [[ $br == 'main' || $br == 'master' ]] && br=''
+  psvar[1]="$br"
+}
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' formats '%b'
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd my_precmd
+RPROMPT='%1v'
