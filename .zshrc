@@ -68,12 +68,12 @@ export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 PATH="$PATH:$GEM_HOME/bin"
 export PATH
 export EDITOR=vim
+export SVN_EDITOR=vim
 export PYTHONPYCACHEPREFIX=~/.pycache
 export DOCKER_BUILDKIT=1
 alias ls='ls --color=auto'
 alias f=find
 alias g=grep
-alias firefox=firefox-developer-edition
 alias bibtex="bibtex -terse"
 unalias pdflatex &> /dev/null # silence error message when not aliased
 unalias latexmk &> /dev/null # silence error message when not aliased
@@ -83,6 +83,8 @@ alias latexmk="latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-e
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
   alias vimdiff='nvim -d'
+if type firefox-developer-edtion > /dev/null 2>&1; then
+  alias firefox='firefox-developer-edition'
 fi
 if type exa > /dev/null 2>&1; then
   alias ls='exa'
@@ -101,7 +103,6 @@ export GREP_COLOR=7
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export LANG=en_US.UTF-8
 export HISTTIMEFORMAT="%d/%m/%y %T "
-SVN_EDITOR=vim
 # pwd as title
 precmd () { print -Pn "\e]2;%~\a" }
 # branch on the right if it isn't main or master
