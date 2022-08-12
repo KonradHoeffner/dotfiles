@@ -83,7 +83,7 @@ alias latexmk="latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-e
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
   alias vimdiff='nvim -d'
-if type firefox-developer-edtion > /dev/null 2>&1; then
+if type firefox-developer-edition > /dev/null 2>&1; then
   alias firefox='firefox-developer-edition'
 fi
 if type exa > /dev/null 2>&1; then
