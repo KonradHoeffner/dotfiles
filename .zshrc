@@ -99,7 +99,7 @@ alias multipush="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev |
 PS1='%c$ '
 unset GREP_OPTIONS
 alias grep="/usr/bin/grep --color=auto"
-export GREP_COLOR=7
+export GREP_COLORS='mt=7'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export LANG=en_US.UTF-8
 export HISTTIMEFORMAT="%d/%m/%y %T "
