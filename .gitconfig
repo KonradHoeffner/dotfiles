@@ -9,6 +9,8 @@
 [core]
 	attributesfile = ~/.gitattributes
 	autocrlf = input
+	editor = nvim
+	pager = less -FR
 [diff "image"]
 	command = /tmp/bla/git-diff-image/git_diff_image
 [diff]
