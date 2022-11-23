@@ -96,6 +96,7 @@ fi
 alias multipull="git -C /home/konrad/projekte/hito/ontology pull origin master && find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | parallel -j64 'echo -n {}... && git -C {} pull | grep -v \"up to date\"'"
 alias multipull-serial="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} sh -c 'echo -n {}... && git -C {} pull'"
 alias multipush="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} sh -c 'echo -n {}... && git -C {} push'"
+alias hdt='docker run -it --entrypoint /bin/bash -v $PWD:/data hdt'
 PS1='%c$ '
 unset GREP_OPTIONS
 alias grep="/usr/bin/grep --color=auto"
