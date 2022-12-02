@@ -64,8 +64,10 @@ fi
 # End of key bindings for special keys (from https://wiki.archlinux.org/index.php/Zsh#Key_bindings)
 
 PATH="$PATH:.:/home/konrad/bin:/home/konrad/.local/bin"
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-PATH="$PATH:$GEM_HOME/bin"
+if type ruby > /dev/null 2>&1; then
+  export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+  PATH="$PATH:$GEM_HOME/bin"
+fi
 export PATH
 export EDITOR=vim
 export SVN_EDITOR=vim
@@ -83,6 +85,7 @@ alias latexmk="latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-e
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
   alias vimdiff='nvim -d'
+fi
 if type firefox-developer-edition > /dev/null 2>&1; then
   alias firefox='firefox-developer-edition'
 fi
