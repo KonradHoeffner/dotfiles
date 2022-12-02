@@ -9,5 +9,6 @@ alias f=find
 alias g=grep
 PS1='\W\$ '
 #PS1='[\u@\h \W]\$ '
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR=7
+unset GREP_OPTIONS
+alias grep="/usr/bin/grep --color=auto"
+export GREP_COLORS='mt=7'
