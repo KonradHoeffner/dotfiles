@@ -1,12 +1,5 @@
-\cd "$(<>/dev/shm/$USER-pwd)"
-
-__cd(){
-    \cd "$@"
-    pwd | sed "s| |\\\ |g" > /dev/shm/$USER-pwd
-}
-alias cd=__cd
+source /etc/profile.d/vte.sh # open new tab in same directory
 # The following lines were added by compinstall
-
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '~/.zshrc'
 
@@ -73,6 +66,7 @@ export EDITOR=vim
 export SVN_EDITOR=vim
 export PYTHONPYCACHEPREFIX=~/.pycache
 export DOCKER_BUILDKIT=1
+export LC_COLLATE=C # locale independent sorting to get equal results everywhere
 alias ls='ls --color=auto'
 alias f=find
 alias g=grep
@@ -81,6 +75,7 @@ unalias pdflatex &> /dev/null # silence error message when not aliased
 unalias latexmk &> /dev/null # silence error message when not aliased
 alias pdflatex='texfot pdflatex -interaction=nonstopmode -halt-on-error -file-line-error'
 alias latexmk="latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error"
+function mdview() { markdown -f fencedcode "$@" > /tmp/markdown.html; firefox /tmp/markdown.html }
 # system tool replacements
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
