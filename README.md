@@ -8,6 +8,7 @@ Also useful for Ubuntu.
 ## Favourite Packages
 
 * `git`
+* `docker`
 * `paru` replaces `pacman` on Arch Linux
 * `zsh` replaces `bash`
 * `nvim` replaces `vim`
@@ -21,8 +22,24 @@ Also useful for Ubuntu.
 	tar -xzf paru.tar.gz
 	cd paru
 	makepkg -si
-	paru -S git zsh zsh-completions zsh-syntax-highlighting neovim exa bat
+	paru -S git zsh zsh-completions zsh-syntax-highlighting neovim exa bat docker
 
-### Installation on Ubuntu
+### Setup
+
+	chsh -s /usr/bin/zsh
+    mkdir -p .config
+    git clone git@github.com:konradhoeffner/dotfiles
+	cd dotfiles
+    cp .ackrc .bashrc .gitconfig .vimrc .zshrc ..
+    cp -r .config/bat .config/nvim ../.config
+	systemctl enable docker --now
+
+On a server, change the precmd line in `.zshrc` to `precmd () { print -Pn "\e]2;$USER@$HOST %~\a" }` to prevent mixups.
+
+### Ubuntu
 
     apt-get install git zsh zsh-syntax-highlighting neovim exa bat
+
+Change `/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh` to `/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh` in ~/.zshrc.
+See <https://docs.docker.com/engine/install/ubuntu/> for Docker.
+
