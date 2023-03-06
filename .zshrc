@@ -68,6 +68,7 @@ export PYTHONPYCACHEPREFIX=~/.pycache
 export DOCKER_BUILDKIT=1
 export LC_COLLATE=C # locale independent sorting to get equal results everywhere
 export SYSTEMD_COLORS=true
+RUSTFLAGS='-C target-cpu=native'
 alias ls='ls --color=auto'
 alias f=find
 alias g=grep
