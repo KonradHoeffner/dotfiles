@@ -34,6 +34,7 @@ Also useful for Ubuntu.
     cp -r .config/bat .config/nvim ../.config
 	systemctl enable docker --now
 
+Consider running [Docker as non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) or [in rootless mode (safer)](https://docs.docker.com/engine/security/rootless/).
 On a server, change the precmd line in `.zshrc` to `precmd () { print -Pn "\e]2;$USER@$HOST %~\a" }` to prevent mixups.
 
 ### Ubuntu
@@ -41,5 +42,4 @@ On a server, change the precmd line in `.zshrc` to `precmd () { print -Pn "\e]2;
     apt-get install git zsh zsh-syntax-highlighting neovim exa bat
 
 Change `/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh` to `/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh` in ~/.zshrc.
-See <https://docs.docker.com/engine/install/ubuntu/> for Docker.
-
+Follow the [Docker Ubuntu installation manual](https://docs.docker.com/engine/install/ubuntu/).
