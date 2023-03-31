@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 # Example for Konrads default installation with packages and dotfiles for confortable command line usage.
 # Not intended to be used with Docker in production.
 FROM archlinux
