@@ -92,6 +92,15 @@ fi
 if type bat > /dev/null 2>&1; then
   alias cat='bat'
 fi
+if type openconnect > /dev/null 2>&1; then
+  alias vpn='openconnect vpn.uni-leipzig.de --no-dtls -b'
+fi
+if type rg > /dev/null 2>&1; then
+  alias ack='rg'
+fi
+if type cargo > /dev/null 2>&1; then
+  alias check='cargo check --color always 2>&1 | less -R'
+fi
 # workaround for GNOME keyring parallel bug, see https://gitlab.gnome.org/GNOME/gnome-keyring/-/issues/102
 alias multipull="git -C /home/konrad/projekte/hito/ontology pull origin master && find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | parallel -j64 'echo -n {}... && git -C {} pull | grep -v \"up to date\"'"
 alias multipull-serial="find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} sh -c 'echo -n {}... && git -C {} pull'"
