@@ -60,6 +60,7 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 let g:Tex_CompileRule_pdf = 'latexmk -interaction=nonstopmode -pdf $*'
 let g:Tex_DefaultTargetFormat = 'pdf'
+set iskeyword+=:
 
 set paste
 nnoremap <F2> :set invpaste paste?<CR>
