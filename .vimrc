@@ -50,10 +50,12 @@ noremap l k
 noremap k j
 noremap j h
 
+filetype plugin indent on
 " disable folding
 let g:Tex_AutoFolding = 0
+" disable indent for tex
+autocmd FileType plaintex,tex,context setlocal indentexpr=
 
-filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 let g:Tex_CompileRule_pdf = 'latexmk -interaction=nonstopmode -pdf $*'
