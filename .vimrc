@@ -1,4 +1,6 @@
 set nocompatible
+set nowrap           " do not automatically wrap on load
+set formatoptions-=t " do not automatically wrap text when typing
 set history=1000
 set modelines=0
 set noexpandtab
