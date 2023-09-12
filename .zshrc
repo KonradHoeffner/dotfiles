@@ -86,8 +86,8 @@ fi
 if type firefox-developer-edition > /dev/null 2>&1; then
   alias firefox='firefox-developer-edition'
 fi
-if type exa > /dev/null 2>&1; then
-  alias ls='exa'
+if type eza > /dev/null 2>&1; then
+  alias ls='eza'
 fi
 if type bat > /dev/null 2>&1; then
   alias cat='bat'
