@@ -110,6 +110,7 @@ alias hdt='docker run -it --entrypoint /bin/bash -v $PWD:/data rdfhdt/hdt-cpp'
 PS1='%c$ '
 unset GREP_OPTIONS
 alias grep="/usr/bin/grep --color=auto"
+alias ssh="TERM=xterm-256color ssh"
 export GREP_COLORS='mt=7'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export LANG=en_US.UTF-8
