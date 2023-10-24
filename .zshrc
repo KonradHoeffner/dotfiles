@@ -82,6 +82,7 @@ function mdview() { markdown -f fencedcode "$@" > /tmp/markdown.html; firefox /t
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
   alias vimdiff='nvim -d'
+  export GIT_EDITOR=nvim
 fi
 if type firefox-developer-edition > /dev/null 2>&1; then
   alias firefox='firefox-developer-edition'
