@@ -66,6 +66,7 @@ export EDITOR=vim
 export SVN_EDITOR=vim
 export PYTHONPYCACHEPREFIX=~/.pycache
 export DOCKER_BUILDKIT=1
+export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
 export LC_COLLATE=C # locale independent sorting to get equal results everywhere
 export SYSTEMD_COLORS=true
 RUSTFLAGS='-C target-cpu=native'
