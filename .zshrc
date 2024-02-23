@@ -103,6 +103,7 @@ if type rg > /dev/null 2>&1; then
 fi
 if type cargo > /dev/null 2>&1; then
   alias check='cargo check --color always 2>&1 | less -R'
+  alias clippy='cargo clippy'
 fi
 # workaround for GNOME keyring parallel bug, see https://gitlab.gnome.org/GNOME/gnome-keyring/-/issues/102
 alias multipull="git -C /home/konrad/projekte/hito/docker pull origin master && find . -maxdepth 5 -name .git -type d | rev | cut -c 6- | rev | parallel -j64 'echo -n {}... && git -C {} pull | grep -v \"up to date\"'"
