@@ -4,7 +4,7 @@ set formatoptions-=t " do not automatically wrap text when typing
 set history=1000
 set modelines=0
 set noexpandtab
-set tabstop=4
+set tabstop=2
 set encoding=utf-8
 set scrolloff=3
 set autoindent
