@@ -63,7 +63,9 @@ if type ruby > /dev/null 2>&1; then
 fi
 export PATH
 export EDITOR=vim
+export GIT_EDITOR=vim
 export SVN_EDITOR=vim
+export SYSTEMD_EDITOR=vim
 export PYTHONPYCACHEPREFIX=~/.pycache
 export DOCKER_BUILDKIT=1
 export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
@@ -85,6 +87,9 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
   alias vimdiff='nvim -d'
   export GIT_EDITOR=nvim
+  export EDITOR=nvim
+  export SVN_EDITOR=nvim
+  export SYSTEMD_EDITOR=nvim
 fi
 if type firefox-developer-edition > /dev/null 2>&1; then
   alias firefox='firefox-developer-edition'
