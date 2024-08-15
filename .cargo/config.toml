@@ -1,2 +1,4 @@
+[build]
+rustflags = ["-Ctarget-cpu=native"]
 [registries.crates-io]
 protocol = "sparse"
