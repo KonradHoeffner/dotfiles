@@ -77,6 +77,7 @@ alias ls='ls --color=auto'
 alias f=find
 alias g=grep
 alias bibtex="bibtex -terse"
+alias tectonic="tectonic -Z search-path=\"${$(kpsewhich biblatex.sty)%/*}\""
 unalias pdflatex &> /dev/null # silence error message when not aliased
 unalias latexmk &> /dev/null # silence error message when not aliased
 alias pdflatex='texfot pdflatex -interaction=nonstopmode -halt-on-error -file-line-error'
