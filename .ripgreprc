@@ -1,2 +1,8 @@
 # search hidden files (starting with a dot)
 --hidden
+
+# Exclude directories.
+--glob=!{.git,.svn,node_modules,vendor}
+
+# Don't print lines longer than this limit.
+--max-columns=10000
